@@ -15,6 +15,23 @@ int ciclolen( int _N_ ){
 }
 
 int main(){
-	printf( "%d", ciclolen( 22 ) );
+	int input_i, input_j;
+	int bigger_cicle = 1;
+	int i, aux;
+
+	while( scanf( "%d %d", &input_i, &input_j ) != EOF ){
+		printf( "%d %d", input_i, input_j );
+		if( input_i > input_j ){
+			input_i ^= input_j;
+			input_j ^= input_i;
+			input_i ^= input_j;
+		}
+		for( i=input_i; i<=input_j; i++ ){
+			aux = ciclolen( i );
+			bigger_cicle = ( aux > bigger_cicle ) ? aux : bigger_cicle;
+		}
+		printf( " %d\n", bigger_cicle );
+		bigger_cicle = 0;
+	}
 	return 0;
 }
