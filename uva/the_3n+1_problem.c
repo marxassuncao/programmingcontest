@@ -1,5 +1,3 @@
-/* not works yet  */
-
 #include<stdio.h>
 
 int ciclolen( int _N_ ){
